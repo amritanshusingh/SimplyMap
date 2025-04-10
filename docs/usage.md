@@ -106,17 +106,17 @@ Since the `nav` section in `mkdocs.yml` references `index.md` and `api.md`, we n
 1. **Create `index.md`**:
    Navigate to the `docs/` directory and create the `index.md` file. This will serve as the homepage of your documentation.
 
-   ```bash
+```bash
    cd docs
    echo "# Welcome to SimplyMap Documentation" > index.md
-   ```
+```
 
 2. **Create `api.md`**:
    Similarly, create the `api.md` file to document the API reference.
 
-   ```bash
+```bash
    echo "# API Reference" > api.md
-   ```
+```
 
 After creating these files, your `docs/` directory should look like this:
 
@@ -128,3 +128,162 @@ After creating these files, your `docs/` directory should look like this:
 ```
 
 Now, you can proceed to edit these files to include the content you want for your documentation.
+
+
+## Step 4 - Build Your MkDocs Site:
+
+Build your MkDocs site while the virtual environment is still active:
+```bash
+mkdocs build
+```
+This will create the `site` directory within your `simplymap-docs` project.
+
+## Step 5 - Configure GitHub Pages Deployment within the Virtual Environment:
+
+Install the gh-deploy plugin within the active virtual environment:
+```bash
+pip install mkdocs-material-extensions  # If you are using Material for MkDocs
+pip install mkdocs-git-revision-date-plugin # Optional
+pip install mkdocs-deploy-gh-pages
+```
+
+## Step 6 - Initialize Git for Deployment
+
+Before deploying to GitHub Pages, you need to initialize Git in your `simplymap-docs` project directory and link it to your GitHub repository. Follow these steps:
+
+1. **Initialize Git**:
+   Navigate to the root of your `simplymap-docs` project and initialize a Git repository.
+
+```bash
+   cd ~/Desktop/MkDocs_Sandbox/simplymap-docs
+   git init
+```
+
+2. **Add Files to the Repository**:
+   Add all the files in your project to the Git repository.
+
+```bash
+   git add .
+```
+
+3. **Commit the Changes**:
+   Commit the added files with an appropriate commit message.
+
+```bash
+   git commit -m "Initial commit for MkDocs project"
+```
+
+4. **Link to a GitHub Repository**:
+   Add the remote URL of your GitHub repository. Here assuming that SSH URL of our git repository is : git@github.com:amritanshusingh/SimplyMap.git
+
+```bash
+   git remote add origin git@github.com:amritanshusingh/SimplyMap.git
+```
+
+5. **Push the Changes**:
+   Push the changes to the `main` branch of your GitHub repository. If your default branch is `master`, you can rename it to `main` using the following commands:
+
+```bash
+   # Rename the default branch to main
+   git branch -M main
+
+   # Push the changes to the remote repository
+   git push -u origin main
+```
+
+   This ensures that your repository uses `main` as the default branch, which is now the standard for most Git hosting platforms like GitHub.
+
+## Step 6.1 - Generate SSH Keys for GitHub Authentication
+
+If you encounter an authentication error when running `git push -u origin main`, you need to set up SSH keys for GitHub authentication. Follow these steps:
+
+1. **Generate an SSH Key Pair**:
+   Run the following command to generate a new SSH key pair. Replace `your_email@example.com` with the email address associated with your GitHub account.
+
+   ```bash
+   ssh-keygen -t ed25519 -C "your_email@example.com"
+   ```
+
+   When prompted, press `Enter` to save the key in the default location (`~/.ssh/id_ed25519`) and optionally set a passphrase for added security.
+
+2. **Add the Public Key to GitHub**:
+   Copy the contents of your public key to your clipboard:
+
+   ```bash
+   cat ~/.ssh/id_ed25519.pub
+   ```
+
+   - Log in to your GitHub account.
+   - Go to **Settings** > **SSH and GPG keys** > **New SSH key**.
+   - Paste the public key into the "Key" field, give it a title, and click **Add SSH key**.
+
+3. **Start the SSH Agent**:
+   Start the SSH agent to manage your private key:
+
+   ```bash
+   eval "$(ssh-agent -s)"
+   ```
+
+4. **Add the Private Key to the SSH Agent**:
+   Add your private key to the SSH agent:
+
+   ```bash
+   ssh-add ~/.ssh/id_ed25519
+   ```
+
+5. **Test the SSH Connection**:
+   Verify that your SSH key is correctly configured by testing the connection to GitHub:
+
+   ```bash
+   ssh -T git@github.com
+   ```
+
+   If successful, you will see a message like: `Hi <username>! You've successfully authenticated, but GitHub does not provide shell access.`
+
+6. **Retry the Git Push Command**:
+   Now that your SSH key is configured, retry the `git push` command:
+
+   ```bash
+   git push -u origin main
+   ```
+
+   This should successfully push your changes to the `main` branch of your GitHub repository.
+
+Now your project is ready for deployment to GitHub Pages.
+
+
+## Step 7 -  Deploy to GitHub Pages within the Virtual Environment:
+
+Run the deployment command while your virtual environment is active:
+```bash
+mkdocs gh-deploy
+```
+This will build your site (if necessary), create or update the gh-pages branch, and push it to your GitHub repository.
+
+## Step 8 -  Enable GitHub Pages for Your Repository:
+
+1. Go to your repository: https://github.com/amritanshusingh/SimplyMap  
+2. Click on Settings.  
+3. Go to the Pages section.  
+4. Set the "Source" to Deploy from a branch.  
+5. Select the gh-pages branch.  
+6. Ensure the "Folder" is set to /(root).  
+7. Click Save.
+
+Your documentation site will be available at https://amritanshusingh.github.io/SimplyMap/ after a short while.
+
+## Step 9 - Deactivating the Virtual Environment (When Done):
+
+When you are finished working on your documentation for the time being, you can deactivate the virtual environment:
+```bash
+deactivate
+```
+Your terminal prompt will return to its normal state.
+
+
+Everytime you make any changes to documentation pages (like index.md or usage.md etc) you'll have to stage your changes, commit and push to origin `main` branch. This push needs to be followed by 
+
+```bash
+mkdocs gh-deploy
+```
+command to automatically re-build GitHub page SimplyMap Documentation static site and incorporate the changes from main branch to gh-pages branch which by the way acts as the source branch for our GitHub Pages SimplyMap Documentation site.

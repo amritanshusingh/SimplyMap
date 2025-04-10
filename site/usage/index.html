@@ -301,6 +301,69 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#step-4-build-your-mkdocs-site" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4 - Build Your MkDocs Site:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-configure-github-pages-deployment-within-the-virtual-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 5 - Configure GitHub Pages Deployment within the Virtual Environment:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-initialize-git-for-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 6 - Initialize Git for Deployment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-61-generate-ssh-keys-for-github-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 6.1 - Generate SSH Keys for GitHub Authentication
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-deploy-to-github-pages-within-the-virtual-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 7 - Deploy to GitHub Pages within the Virtual Environment:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-8-enable-github-pages-for-your-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 8 - Enable GitHub Pages for Your Repository:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-9-deactivating-the-virtual-environment-when-done" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 9 - Deactivating the Virtual Environment (When Done):
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -393,6 +456,69 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#step-4-build-your-mkdocs-site" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4 - Build Your MkDocs Site:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-configure-github-pages-deployment-within-the-virtual-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 5 - Configure GitHub Pages Deployment within the Virtual Environment:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-initialize-git-for-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 6 - Initialize Git for Deployment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-61-generate-ssh-keys-for-github-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 6.1 - Generate SSH Keys for GitHub Authentication
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-deploy-to-github-pages-within-the-virtual-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 7 - Deploy to GitHub Pages within the Virtual Environment:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-8-enable-github-pages-for-your-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 8 - Enable GitHub Pages for Your Repository:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-9-deactivating-the-virtual-environment-when-done" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 9 - Deactivating the Virtual Environment (When Done):
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -475,15 +601,15 @@ nav:
 <li><strong>Create <code>index.md</code></strong>:
    Navigate to the <code>docs/</code> directory and create the <code>index.md</code> file. This will serve as the homepage of your documentation.</li>
 </ol>
-<p><code>bash
-   cd docs
-   echo "# Welcome to SimplyMap Documentation" &gt; index.md</code></p>
+<pre><code class="language-bash">   cd docs
+   echo &quot;# Welcome to SimplyMap Documentation&quot; &gt; index.md
+</code></pre>
 <ol>
 <li><strong>Create <code>api.md</code></strong>:
    Similarly, create the <code>api.md</code> file to document the API reference.</li>
 </ol>
-<p><code>bash
-   echo "# API Reference" &gt; api.md</code></p>
+<pre><code class="language-bash">   echo &quot;# API Reference&quot; &gt; api.md
+</code></pre>
 <p>After creating these files, your <code>docs/</code> directory should look like this:</p>
 <pre><code>~/Desktop/MkDocs_Sandbox/simplymap-docs/docs/
 ├── index.md
@@ -491,6 +617,129 @@ nav:
 ├── api.md
 </code></pre>
 <p>Now, you can proceed to edit these files to include the content you want for your documentation.</p>
+<h2 id="step-4-build-your-mkdocs-site">Step 4 - Build Your MkDocs Site:</h2>
+<p>Build your MkDocs site while the virtual environment is still active:</p>
+<pre><code class="language-bash">mkdocs build
+</code></pre>
+<p>This will create the <code>site</code> directory within your <code>simplymap-docs</code> project.</p>
+<h2 id="step-5-configure-github-pages-deployment-within-the-virtual-environment">Step 5 - Configure GitHub Pages Deployment within the Virtual Environment:</h2>
+<p>Install the gh-deploy plugin within the active virtual environment:</p>
+<pre><code class="language-bash">pip install mkdocs-material-extensions  # If you are using Material for MkDocs
+pip install mkdocs-git-revision-date-plugin # Optional
+pip install mkdocs-deploy-gh-pages
+</code></pre>
+<h2 id="step-6-initialize-git-for-deployment">Step 6 - Initialize Git for Deployment</h2>
+<p>Before deploying to GitHub Pages, you need to initialize Git in your <code>simplymap-docs</code> project directory and link it to your GitHub repository. Follow these steps:</p>
+<ol>
+<li><strong>Initialize Git</strong>:
+   Navigate to the root of your <code>simplymap-docs</code> project and initialize a Git repository.</li>
+</ol>
+<pre><code class="language-bash">   cd ~/Desktop/MkDocs_Sandbox/simplymap-docs
+   git init
+</code></pre>
+<ol>
+<li><strong>Add Files to the Repository</strong>:
+   Add all the files in your project to the Git repository.</li>
+</ol>
+<pre><code class="language-bash">   git add .
+</code></pre>
+<ol>
+<li><strong>Commit the Changes</strong>:
+   Commit the added files with an appropriate commit message.</li>
+</ol>
+<pre><code class="language-bash">   git commit -m &quot;Initial commit for MkDocs project&quot;
+</code></pre>
+<ol>
+<li><strong>Link to a GitHub Repository</strong>:
+   Add the remote URL of your GitHub repository. Here assuming that SSH URL of our git repository is : git@github.com:amritanshusingh/SimplyMap.git</li>
+</ol>
+<pre><code class="language-bash">   git remote add origin git@github.com:amritanshusingh/SimplyMap.git
+</code></pre>
+<ol>
+<li><strong>Push the Changes</strong>:
+   Push the changes to the <code>main</code> branch of your GitHub repository. If your default branch is <code>master</code>, you can rename it to <code>main</code> using the following commands:</li>
+</ol>
+<pre><code class="language-bash">   # Rename the default branch to main
+   git branch -M main
+
+   # Push the changes to the remote repository
+   git push -u origin main
+</code></pre>
+<p>This ensures that your repository uses <code>main</code> as the default branch, which is now the standard for most Git hosting platforms like GitHub.</p>
+<h2 id="step-61-generate-ssh-keys-for-github-authentication">Step 6.1 - Generate SSH Keys for GitHub Authentication</h2>
+<p>If you encounter an authentication error when running <code>git push -u origin main</code>, you need to set up SSH keys for GitHub authentication. Follow these steps:</p>
+<ol>
+<li><strong>Generate an SSH Key Pair</strong>:
+   Run the following command to generate a new SSH key pair. Replace <code>your_email@example.com</code> with the email address associated with your GitHub account.</li>
+</ol>
+<p><code>bash
+   ssh-keygen -t ed25519 -C "your_email@example.com"</code></p>
+<p>When prompted, press <code>Enter</code> to save the key in the default location (<code>~/.ssh/id_ed25519</code>) and optionally set a passphrase for added security.</p>
+<ol>
+<li><strong>Add the Public Key to GitHub</strong>:
+   Copy the contents of your public key to your clipboard:</li>
+</ol>
+<p><code>bash
+   cat ~/.ssh/id_ed25519.pub</code></p>
+<ul>
+<li>Log in to your GitHub account.</li>
+<li>Go to <strong>Settings</strong> &gt; <strong>SSH and GPG keys</strong> &gt; <strong>New SSH key</strong>.</li>
+<li>
+<p>Paste the public key into the "Key" field, give it a title, and click <strong>Add SSH key</strong>.</p>
+</li>
+<li>
+<p><strong>Start the SSH Agent</strong>:
+   Start the SSH agent to manage your private key:</p>
+</li>
+</ul>
+<p><code>bash
+   eval "$(ssh-agent -s)"</code></p>
+<ol>
+<li><strong>Add the Private Key to the SSH Agent</strong>:
+   Add your private key to the SSH agent:</li>
+</ol>
+<p><code>bash
+   ssh-add ~/.ssh/id_ed25519</code></p>
+<ol>
+<li><strong>Test the SSH Connection</strong>:
+   Verify that your SSH key is correctly configured by testing the connection to GitHub:</li>
+</ol>
+<p><code>bash
+   ssh -T git@github.com</code></p>
+<p>If successful, you will see a message like: <code>Hi &lt;username&gt;! You've successfully authenticated, but GitHub does not provide shell access.</code></p>
+<ol>
+<li><strong>Retry the Git Push Command</strong>:
+   Now that your SSH key is configured, retry the <code>git push</code> command:</li>
+</ol>
+<p><code>bash
+   git push -u origin main</code></p>
+<p>This should successfully push your changes to the <code>main</code> branch of your GitHub repository.</p>
+<p>Now your project is ready for deployment to GitHub Pages.</p>
+<h2 id="step-7-deploy-to-github-pages-within-the-virtual-environment">Step 7 -  Deploy to GitHub Pages within the Virtual Environment:</h2>
+<p>Run the deployment command while your virtual environment is active:</p>
+<pre><code class="language-bash">mkdocs gh-deploy
+</code></pre>
+<p>This will build your site (if necessary), create or update the gh-pages branch, and push it to your GitHub repository.</p>
+<h2 id="step-8-enable-github-pages-for-your-repository">Step 8 -  Enable GitHub Pages for Your Repository:</h2>
+<ol>
+<li>Go to your repository: https://github.com/amritanshusingh/SimplyMap  </li>
+<li>Click on Settings.  </li>
+<li>Go to the Pages section.  </li>
+<li>Set the "Source" to Deploy from a branch.  </li>
+<li>Select the gh-pages branch.  </li>
+<li>Ensure the "Folder" is set to /(root).  </li>
+<li>Click Save.</li>
+</ol>
+<p>Your documentation site will be available at https://amritanshusingh.github.io/SimplyMap/ after a short while.</p>
+<h2 id="step-9-deactivating-the-virtual-environment-when-done">Step 9 - Deactivating the Virtual Environment (When Done):</h2>
+<p>When you are finished working on your documentation for the time being, you can deactivate the virtual environment:</p>
+<pre><code class="language-bash">deactivate
+</code></pre>
+<p>Your terminal prompt will return to its normal state.</p>
+<p>Everytime you make any changes to documentation pages (like index.md or usage.md etc) you'll have to stage your changes, commit and push to origin <code>main</code> branch. This push needs to be followed by </p>
+<pre><code class="language-bash">mkdocs gh-deploy
+</code></pre>
+<p>command to automatically re-build GitHub page SimplyMap Documentation static site and incorporate the changes from main branch to gh-pages branch which by the way acts as the source branch for our GitHub Pages SimplyMap Documentation site.</p>
 
 
 
