@@ -420,16 +420,18 @@
   <h1>Server Setup</h1>
 
 <h2 id="setting-up-amazon-aws-ec2-t2micro-instance">Setting up Amazon AWS EC2 t2.micro instance</h2>
-<p>It is pretty straightforward.<br />
-1. Sign up for Amazon AWS Free Tier.<br />
-2. Log into the Amazon AWS Console and go to EC2 Instances.<br />
-3. Create a fresh t2.micro instance. It is a CLI-based server.<br />
-4. Launch the t2.micro instance. You'll be able to see its public IPv4 address.<br />
-5. There is an option to generate an SSH key. The key file will have a <code>.pem</code> extension. Download it and keep it safe.<br />
-6. Now that we have our server set up, we can SSH into it. In our terminal, we run:</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>ssh<span class="w"> </span>-i<span class="w"> </span>t2microKey.pem<span class="w"> </span>ubuntu@XX.XX.XX.XXX
+<p>It is pretty straight forward.  </p>
+<ol>
+<li>Sign up for Amazon AWS Free Tier.  </li>
+<li>Log into the Amazon AWS Console and go to EC2 Instances.  </li>
+<li>Create a fresh t2.micro instance. It is a CLI-based server.  </li>
+<li>Launch the t2.micro instance. You'll be able to see its public IPv4 address.  </li>
+<li>There is an option to generate an SSH key. The key file will have a <code>.pem</code> extension. Download it and keep it safe.  </li>
+<li>Now that we have our server set up, we can SSH into it. In our terminal, we run:</li>
+</ol>
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>ssh<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;t2microKey.pem&quot;</span><span class="w"> </span>ubuntu@ec2-44-243-118-166.us-west-2.compute.amazonaws.com
 </span></code></pre></div></td></tr></table></div>
-<p>Replace <code>t2microKey.pem</code> with the path to your downloaded key file and <code>XX.XX.XX.XXX</code> with your server's public IPv4 address. <code>ubuntu</code> is the default username for the server.</p>
+<p>Replace <code>t2microKey.pem</code> with the path to your downloaded key file and <code>ec2-44-243-118-166.us-west-2.compute.amazonaws.com</code> is the server's public IPv4 domain name. <code>ubuntu</code> is the default username for the server.</p>
 <h3 id="security-note">Security Note</h3>
 <p>Ensure that your <code>.pem</code> file has the correct permissions. You can set the appropriate permissions using the following command:</p>
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a>chmod<span class="w"> </span><span class="m">400</span><span class="w"> </span>t2microKey.pem
