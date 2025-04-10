@@ -4,6 +4,7 @@ theme:
   features:
     - content.code.copy
     - content.code.highlight
+    - content.code.annotate  # Enables language labels for code blocks
 nav:
     - Home: index.md
     - Usage: usage.md
