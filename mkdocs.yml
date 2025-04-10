@@ -1,6 +1,9 @@
 site_name: SimplyMap Documentation
 theme:
   name: material
+  features:
+    - content.code.copy
+    - content.code.highlight
 nav:
     - Home: index.md
     - Usage: usage.md
