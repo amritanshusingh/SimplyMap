@@ -4,6 +4,8 @@ SimplyMap is a web based application which makes performing day to day GIS (Geog
 It uses a dedicated Virtual Private Server as an API Backend.
 
 ## Setting up Virtual Private Server
+SimplyMap uses Amazon AWS t2.micro instance (currently free tier) as its API backend.
+To read steps to set up the same head [here](server.md)
 
 ## Setting up the Front End
 
