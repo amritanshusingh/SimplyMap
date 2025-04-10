@@ -155,42 +155,42 @@ Before deploying to GitHub Pages, you need to initialize Git in your `simplymap-
 1. **Initialize Git**:
    Navigate to the root of your `simplymap-docs` project and initialize a Git repository.
 
-```bash title="bash"
-   cd ~/Desktop/MkDocs_Sandbox/simplymap-docs
-   git init
-```
+   ```bash title="bash"
+      cd ~/Desktop/MkDocs_Sandbox/simplymap-docs
+      git init
+   ```
 
 2. **Add Files to the Repository**:
    Add all the files in your project to the Git repository.
 
-```bash title="bash"
-   git add .
-```
+   ```bash title="bash"
+      git add .
+   ```
 
 3. **Commit the Changes**:
    Commit the added files with an appropriate commit message.
 
-```bash title="bash"
-   git commit -m "Initial commit for MkDocs project"
-```
+   ```bash title="bash"
+      git commit -m "Initial commit for MkDocs project"
+   ```
 
 4. **Link to a GitHub Repository**:
    Add the remote URL of your GitHub repository. Here assuming that SSH URL of our git repository is : git@github.com:amritanshusingh/SimplyMap.git
 
-```bash title="bash"
-   git remote add origin git@github.com:amritanshusingh/SimplyMap.git
-```
+   ```bash title="bash"
+      git remote add origin git@github.com:amritanshusingh/SimplyMap.git
+   ```
 
 5. **Push the Changes**:
    Push the changes to the `main` branch of your GitHub repository. If your default branch is `master`, you can rename it to `main` using the following commands:
 
-```bash title="bash"
-   # Rename the default branch to main
-   git branch -M main
+   ```bash title="bash"
+      # Rename the default branch to main
+      git branch -M main
 
-   # Push the changes to the remote repository
-   git push -u origin main
-```
+      # Push the changes to the remote repository
+      git push -u origin main
+   ```
 
    This ensures that your repository uses `main` as the default branch, which is now the standard for most Git hosting platforms like GitHub.
 
