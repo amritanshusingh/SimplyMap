@@ -1,17 +1,12 @@
-# Welcome to MkDocs
+# Welcome to SimplyMap Documentation
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+SimplyMap is a web based application which makes performing day to day GIS (Geographical Information System) based tasks easy.
+It uses a dedicated Virtual Private Server as an API Backend.
 
-## Commands
+## Setting up Virtual Private Server
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+## Setting up the Front End
 
-## Project layout
+## Setting up the Documentation 
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+Please head [here](usage.md)

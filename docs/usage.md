@@ -59,7 +59,7 @@ pip install mkdocs
 Similarly, install the Material for MkDocs theme
 
 ```bash
-ppip install mkdocs-material
+pip install mkdocs-material
 ```
 
 ## Step 2 - Creating MkDocs Project
