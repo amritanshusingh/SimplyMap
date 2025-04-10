@@ -8,7 +8,7 @@ For the purpose of this setup guide we will assume our operating system to be Ub
 
 Install Python and Pip (if not already installed):
 
-```bash
+```bash title="bash"
 sudo apt update
 sudo apt install python3 python3-pip
 ```
@@ -16,7 +16,7 @@ sudo apt install python3 python3-pip
 In case of a fresh installation of ubuntu, you won't be having `git` installed
 To Install Git Simply follow :
 
-```bash
+```bash title="bash"
 sudo apt install git
 ```
 
@@ -24,14 +24,14 @@ sudo apt install git
 
 We can simply begin with creating a directory to start working 
 
-```bash
+```bash title="bash"
 mkdir ~/Desktop/MkDocs_Sandbox
 cd ~/Desktop/MkDocs_Sandbox
 ```
 
 Now since we are inside our sanbox directory, we can begin MkDocs installation. Its a good practice to create a python virtual environment as installation of MkDocs might thrown some errors if installing globally. Run the following command to create a virtual environment (we'll call it venv)
 
-```bash
+```bash title="bash"
 python3 -m venv venv
 ```
 
@@ -45,7 +45,7 @@ By now our director structure should look like this
 
 To activate the Python virtual environment, run the following command:
 
-```bash
+```bash title="bash"
 source venv/bin/activate
 ```
 
@@ -53,13 +53,13 @@ Once activated, your terminal prompt will change to indicate that the virtual en
 
 Now, install MkDocs using pip within the active virtual environment:
 
-```bash
+```bash title="bash"
 pip install mkdocs
 ```
 
 Similarly, install the Material for MkDocs theme
 
-```bash
+```bash title="bash"
 pip install mkdocs-material
 ```
 
@@ -68,7 +68,7 @@ pip install mkdocs-material
 Remember that we were in MkDocs_Sandbox directory? i.e ~/Desktop/MkDocs_Sandbox
 run:
 
-```bash
+```bash title="bash"
 mkdocs new simplymap-docs
 cd simplymap-docs
 ```
@@ -92,7 +92,7 @@ By now we have setup our barebones MkDocs Project by the name of simplymap-docs
 
 Open the mkdocs.yml file in your project directory with a text editor and configure it as needed. Here's the same basic configuration using the Material theme:
 
-```yaml
+```yaml title="yml"
 site_name: SimplyMap Documentation
 theme:
   name: material
@@ -107,7 +107,7 @@ Since the `nav` section in `mkdocs.yml` references `index.md` and `api.md`, we n
 1. **Create `index.md`**:
    Navigate to the `docs/` directory and create the `index.md` file. This will serve as the homepage of your documentation.
 
-```bash
+```bash title="bash"
    cd docs
    echo "# Welcome to SimplyMap Documentation" > index.md
 ```
@@ -115,7 +115,7 @@ Since the `nav` section in `mkdocs.yml` references `index.md` and `api.md`, we n
 2. **Create `api.md`**:
    Similarly, create the `api.md` file to document the API reference.
 
-```bash
+```bash title="bash"
    echo "# API Reference" > api.md
 ```
 
@@ -134,7 +134,7 @@ Now, you can proceed to edit these files to include the content you want for you
 ## Step 4 - Build Your MkDocs Site:
 
 Build your MkDocs site while the virtual environment is still active:
-```bash
+```bash title="bash"
 mkdocs build
 ```
 This will create the `site` directory within your `simplymap-docs` project.
@@ -142,7 +142,7 @@ This will create the `site` directory within your `simplymap-docs` project.
 ## Step 5 - Configure GitHub Pages Deployment within the Virtual Environment:
 
 Install the gh-deploy plugin within the active virtual environment:
-```bash
+```bash title="bash"
 pip install mkdocs-material-extensions  # If you are using Material for MkDocs
 pip install mkdocs-git-revision-date-plugin # Optional
 pip install mkdocs-deploy-gh-pages
@@ -155,7 +155,7 @@ Before deploying to GitHub Pages, you need to initialize Git in your `simplymap-
 1. **Initialize Git**:
    Navigate to the root of your `simplymap-docs` project and initialize a Git repository.
 
-```bash
+```bash title="bash"
    cd ~/Desktop/MkDocs_Sandbox/simplymap-docs
    git init
 ```
@@ -163,28 +163,28 @@ Before deploying to GitHub Pages, you need to initialize Git in your `simplymap-
 2. **Add Files to the Repository**:
    Add all the files in your project to the Git repository.
 
-```bash
+```bash title="bash"
    git add .
 ```
 
 3. **Commit the Changes**:
    Commit the added files with an appropriate commit message.
 
-```bash
+```bash title="bash"
    git commit -m "Initial commit for MkDocs project"
 ```
 
 4. **Link to a GitHub Repository**:
    Add the remote URL of your GitHub repository. Here assuming that SSH URL of our git repository is : git@github.com:amritanshusingh/SimplyMap.git
 
-```bash
+```bash title="bash"
    git remote add origin git@github.com:amritanshusingh/SimplyMap.git
 ```
 
 5. **Push the Changes**:
    Push the changes to the `main` branch of your GitHub repository. If your default branch is `master`, you can rename it to `main` using the following commands:
 
-```bash
+```bash title="bash"
    # Rename the default branch to main
    git branch -M main
 
@@ -201,7 +201,7 @@ If you encounter an authentication error when running `git push -u origin main`,
 1. **Generate an SSH Key Pair**:
    Run the following command to generate a new SSH key pair. Replace `your_email@example.com` with the email address associated with your GitHub account.
 
-   ```bash
+   ```bash title="bash"
    ssh-keygen -t ed25519 -C "your_email@example.com"
    ```
 
@@ -210,7 +210,7 @@ If you encounter an authentication error when running `git push -u origin main`,
 2. **Add the Public Key to GitHub**:
    Copy the contents of your public key to your clipboard:
 
-   ```bash
+   ```bash title="bash"
    cat ~/.ssh/id_ed25519.pub
    ```
 
@@ -221,21 +221,21 @@ If you encounter an authentication error when running `git push -u origin main`,
 3. **Start the SSH Agent**:
    Start the SSH agent to manage your private key:
 
-   ```bash
+   ```bash title="bash"
    eval "$(ssh-agent -s)"
    ```
 
 4. **Add the Private Key to the SSH Agent**:
    Add your private key to the SSH agent:
 
-   ```bash
+   ```bash title="bash"
    ssh-add ~/.ssh/id_ed25519
    ```
 
 5. **Test the SSH Connection**:
    Verify that your SSH key is correctly configured by testing the connection to GitHub:
 
-   ```bash
+   ```bash title="bash"
    ssh -T git@github.com
    ```
 
@@ -244,7 +244,7 @@ If you encounter an authentication error when running `git push -u origin main`,
 6. **Retry the Git Push Command**:
    Now that your SSH key is configured, retry the `git push` command:
 
-   ```bash
+   ```bash title="bash"
    git push -u origin main
    ```
 
@@ -256,7 +256,7 @@ Now your project is ready for deployment to GitHub Pages.
 ## Step 7 -  Deploy to GitHub Pages within the Virtual Environment:
 
 Run the deployment command while your virtual environment is active:
-```bash
+```bash title="bash"
 mkdocs gh-deploy
 ```
 This will build your site (if necessary), create or update the gh-pages branch, and push it to your GitHub repository.
@@ -276,7 +276,7 @@ Your documentation site will be available at https://amritanshusingh.github.io/S
 ## Step 9 - Deactivating the Virtual Environment (When Done):
 
 When you are finished working on your documentation for the time being, you can deactivate the virtual environment:
-```bash
+```bash title="bash"
 deactivate
 ```
 Your terminal prompt will return to its normal state.
@@ -284,7 +284,7 @@ Your terminal prompt will return to its normal state.
 
 Everytime you make any changes to documentation pages (like index.md or usage.md etc) you'll have to stage your changes, commit and push to origin `main` branch. This push needs to be followed by 
 
-```bash
+```bash title="bash"
 mkdocs gh-deploy
 ```
 command to automatically re-build GitHub page SimplyMap Documentation static site and incorporate the changes from main branch to gh-pages branch which by the way acts as the source branch for our GitHub Pages SimplyMap Documentation site.
