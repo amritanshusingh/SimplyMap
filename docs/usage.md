@@ -35,6 +35,7 @@ Now since we are inside our sanbox directory, we can begin MkDocs installation. 
 python3 -m venv venv
 ```
 
+This only needs to be done once. Next time while starting the work, we just need to activate the virtual environment and not create it once more. If we run `python3 -m venv venv` everytime we start the terminal, we will have to reinstall mkdocs and mkdocs-material.
 By now our director structure should look like this 
 
 ```
