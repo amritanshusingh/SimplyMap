@@ -437,6 +437,26 @@
 <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a>chmod<span class="w"> </span><span class="m">400</span><span class="w"> </span>t2microKey.pem
 </span></code></pre></div></td></tr></table></div>
 <h2 id="installing-required-tools">Installing required tools</h2>
+<p>Now that we have successfully SSH'ed into our remote server we can try out simple commands for example:
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span>
+<span class="normal"><a href="#__codelineno-2-6">6</a></span>
+<span class="normal"><a href="#__codelineno-2-7">7</a></span>
+<span class="normal"><a href="#__codelineno-2-8">8</a></span>
+<span class="normal"><a href="#__codelineno-2-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a>$<span class="w"> </span>ll
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a>total<span class="w"> </span><span class="m">28</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a>drwxr-x---<span class="w"> </span><span class="m">4</span><span class="w"> </span>ubuntu<span class="w"> </span>ubuntu<span class="w"> </span><span class="m">4096</span><span class="w"> </span>Apr<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="m">11</span>:47<span class="w"> </span>./
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a>drwxr-xr-x<span class="w"> </span><span class="m">3</span><span class="w"> </span>root<span class="w">   </span>root<span class="w">   </span><span class="m">4096</span><span class="w"> </span>Apr<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="m">11</span>:40<span class="w"> </span>../
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a>-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>ubuntu<span class="w"> </span>ubuntu<span class="w">  </span><span class="m">220</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">31</span><span class="w">  </span><span class="m">2024</span><span class="w"> </span>.bash_logout
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a>-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>ubuntu<span class="w"> </span>ubuntu<span class="w"> </span><span class="m">3771</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">31</span><span class="w">  </span><span class="m">2024</span><span class="w"> </span>.bashrc
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a>drwx------<span class="w"> </span><span class="m">2</span><span class="w"> </span>ubuntu<span class="w"> </span>ubuntu<span class="w"> </span><span class="m">4096</span><span class="w"> </span>Apr<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="m">11</span>:47<span class="w"> </span>.cache/
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a>-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>ubuntu<span class="w"> </span>ubuntu<span class="w">  </span><span class="m">807</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">31</span><span class="w">  </span><span class="m">2024</span><span class="w"> </span>.profile
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a>drwx------<span class="w"> </span><span class="m">2</span><span class="w"> </span>ubuntu<span class="w"> </span>ubuntu<span class="w"> </span><span class="m">4096</span><span class="w"> </span>Apr<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="m">11</span>:40<span class="w"> </span>.ssh/
+</span></code></pre></div></td></tr></table></div></p>
+<p>We will be presented with the server's clean and default directory structure.</p>
 
 
 
