@@ -9,6 +9,7 @@ nav:
     - Home: index.md
     - Usage: usage.md
     - API Reference: api.md
+    - Server Setup: server.md  # Added link to server.md
 plugins:
   - search
 markdown_extensions:
