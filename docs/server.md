@@ -23,3 +23,18 @@ chmod 400 t2microKey.pem
 ```
 
 ## Installing required tools
+
+Now that we have successfully SSH'ed into our remote server we can try out simple commands for example:
+```bash title="bash"
+$ ll
+total 28
+drwxr-x--- 4 ubuntu ubuntu 4096 Apr 10 11:47 ./
+drwxr-xr-x 3 root   root   4096 Apr 10 11:40 ../
+-rw-r--r-- 1 ubuntu ubuntu  220 Mar 31  2024 .bash_logout
+-rw-r--r-- 1 ubuntu ubuntu 3771 Mar 31  2024 .bashrc
+drwx------ 2 ubuntu ubuntu 4096 Apr 10 11:47 .cache/
+-rw-r--r-- 1 ubuntu ubuntu  807 Mar 31  2024 .profile
+drwx------ 2 ubuntu ubuntu 4096 Apr 10 11:40 .ssh/
+```
+
+We will be presented with the server's clean and default directory structure.
