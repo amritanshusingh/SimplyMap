@@ -1,0 +1,9 @@
+site_name: SimplyMap Documentation
+theme:
+  name: material
+nav:
+    - Home: index.md
+    - Usage: usage.md
+    - API Reference: api.md
+plugins:
+  - search
