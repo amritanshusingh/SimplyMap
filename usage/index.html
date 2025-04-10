@@ -284,15 +284,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-creating-mkdocs-project" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 2 - Creating MkDocs Project
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#step-3-configure-mkdocs-mkdocsyml" class="md-nav__link">
     <span class="md-ellipsis">
       Step 3 - Configure MkDocs (mkdocs.yml):
@@ -302,27 +293,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-build-your-mkdocs-site" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 4 - Build Your MkDocs Site:
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#step-5-configure-github-pages-deployment-within-the-virtual-environment" class="md-nav__link">
     <span class="md-ellipsis">
       Step 5 - Configure GitHub Pages Deployment within the Virtual Environment:
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-6-initialize-git-for-deployment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 6 - Initialize Git for Deployment
     </span>
   </a>
   
@@ -341,24 +314,6 @@
   <a href="#step-7-deploy-to-github-pages-within-the-virtual-environment" class="md-nav__link">
     <span class="md-ellipsis">
       Step 7 - Deploy to GitHub Pages within the Virtual Environment:
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-8-enable-github-pages-for-your-repository" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 8 - Enable GitHub Pages for Your Repository:
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-9-deactivating-the-virtual-environment-when-done" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 9 - Deactivating the Virtual Environment (When Done):
     </span>
   </a>
   
@@ -439,15 +394,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-creating-mkdocs-project" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 2 - Creating MkDocs Project
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#step-3-configure-mkdocs-mkdocsyml" class="md-nav__link">
     <span class="md-ellipsis">
       Step 3 - Configure MkDocs (mkdocs.yml):
@@ -457,27 +403,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-build-your-mkdocs-site" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 4 - Build Your MkDocs Site:
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#step-5-configure-github-pages-deployment-within-the-virtual-environment" class="md-nav__link">
     <span class="md-ellipsis">
       Step 5 - Configure GitHub Pages Deployment within the Virtual Environment:
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-6-initialize-git-for-deployment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 6 - Initialize Git for Deployment
     </span>
   </a>
   
@@ -496,24 +424,6 @@
   <a href="#step-7-deploy-to-github-pages-within-the-virtual-environment" class="md-nav__link">
     <span class="md-ellipsis">
       Step 7 - Deploy to GitHub Pages within the Virtual Environment:
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-8-enable-github-pages-for-your-repository" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 8 - Enable GitHub Pages for Your Repository:
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-9-deactivating-the-virtual-environment-when-done" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 9 - Deactivating the Virtual Environment (When Done):
     </span>
   </a>
   
@@ -540,20 +450,26 @@
 <p>For the purpose of this setup guide we will assume our operating system to be Ubuntu 64 bits.</p>
 <h2 id="pre-requisites">Pre-requisites</h2>
 <p>Install Python and Pip (if not already installed):</p>
-<pre><code class="language-bash">sudo apt update
-sudo apt install python3 python3-pip
-</code></pre>
-<p>In case of a fresh installation of ubuntu, you won't be having <code>git</code> installed
-To Install Git Simply follow :</p>
-<pre><code class="language-bash">sudo apt install git
+<p>```bash title="bash"
+sudo apt update
+sudo apt install python3 python3-pip</p>
+<pre><code>
+In case of a fresh installation of ubuntu, you won't be having `git` installed
+To Install Git Simply follow :
+
+```bash title=&quot;bash&quot;
+sudo apt install git
 </code></pre>
 <h2 id="step-1-installing-mkdocs-and-its-material-theme">Step 1 - Installing MkDocs and it's material theme</h2>
 <p>We can simply begin with creating a directory to start working </p>
-<pre><code class="language-bash">mkdir ~/Desktop/MkDocs_Sandbox
-cd ~/Desktop/MkDocs_Sandbox
-</code></pre>
-<p>Now since we are inside our sanbox directory, we can begin MkDocs installation. Its a good practice to create a python virtual environment as installation of MkDocs might thrown some errors if installing globally. Run the following command to create a virtual environment (we'll call it venv)</p>
-<pre><code class="language-bash">python3 -m venv venv
+<p>```bash title="bash"
+mkdir ~/Desktop/MkDocs_Sandbox
+cd ~/Desktop/MkDocs_Sandbox</p>
+<pre><code>
+Now since we are inside our sanbox directory, we can begin MkDocs installation. Its a good practice to create a python virtual environment as installation of MkDocs might thrown some errors if installing globally. Run the following command to create a virtual environment (we'll call it venv)
+
+```bash title=&quot;bash&quot;
+python3 -m venv venv
 </code></pre>
 <p>This only needs to be done once. Next time while starting the work, we just need to activate the virtual environment and not create it once more. If we run <code>python3 -m venv venv</code> everytime we start the terminal, we will have to reinstall mkdocs and mkdocs-material.
 By now our director structure should look like this </p>
@@ -561,19 +477,27 @@ By now our director structure should look like this </p>
 ├── venv/
 </code></pre>
 <p>To activate the Python virtual environment, run the following command:</p>
-<pre><code class="language-bash">source venv/bin/activate
-</code></pre>
-<p>Once activated, your terminal prompt will change to indicate that the virtual environment is active. You can now proceed with installing MkDocs and its dependencies. To read more about Python virtual environment head over <a href="https://docs.python.org/3/library/venv.html">here</a></p>
-<p>Now, install MkDocs using pip within the active virtual environment:</p>
-<pre><code class="language-bash">pip install mkdocs
+<p>```bash title="bash"
+source venv/bin/activate</p>
+<pre><code>
+Once activated, your terminal prompt will change to indicate that the virtual environment is active. You can now proceed with installing MkDocs and its dependencies. To read more about Python virtual environment head over [here](https://docs.python.org/3/library/venv.html)
+
+Now, install MkDocs using pip within the active virtual environment:
+
+```bash title=&quot;bash&quot;
+pip install mkdocs
 </code></pre>
 <p>Similarly, install the Material for MkDocs theme</p>
-<pre><code class="language-bash">pip install mkdocs-material
-</code></pre>
-<h2 id="step-2-creating-mkdocs-project">Step 2 - Creating MkDocs Project</h2>
-<p>Remember that we were in MkDocs_Sandbox directory? i.e ~/Desktop/MkDocs_Sandbox
-run:</p>
-<pre><code class="language-bash">mkdocs new simplymap-docs
+<p>```bash title="bash"
+pip install mkdocs-material</p>
+<pre><code>
+## Step 2 - Creating MkDocs Project
+
+Remember that we were in MkDocs_Sandbox directory? i.e ~/Desktop/MkDocs_Sandbox
+run:
+
+```bash title=&quot;bash&quot;
+mkdocs new simplymap-docs
 cd simplymap-docs
 </code></pre>
 <p>By now our directory structure should look like this:</p>
@@ -589,78 +513,92 @@ cd simplymap-docs
 <p>By now we have setup our barebones MkDocs Project by the name of simplymap-docs</p>
 <h2 id="step-3-configure-mkdocs-mkdocsyml">Step 3 - Configure MkDocs (mkdocs.yml):</h2>
 <p>Open the mkdocs.yml file in your project directory with a text editor and configure it as needed. Here's the same basic configuration using the Material theme:</p>
-<pre><code class="language-yaml">site_name: SimplyMap Documentation
+<p>```yaml title="yml"
+site_name: SimplyMap Documentation
 theme:
   name: material
 nav:
     - Home: index.md
     - Usage: usage.md
-    - API Reference: api.md
-</code></pre>
-<p>Since the <code>nav</code> section in <code>mkdocs.yml</code> references <code>index.md</code> and <code>api.md</code>, we need to create these files in the <code>docs/</code> directory.</p>
-<ol>
-<li><strong>Create <code>index.md</code></strong>:
-   Navigate to the <code>docs/</code> directory and create the <code>index.md</code> file. This will serve as the homepage of your documentation.</li>
-</ol>
-<pre><code class="language-bash">   cd docs
+    - API Reference: api.md</p>
+<pre><code>
+Since the `nav` section in `mkdocs.yml` references `index.md` and `api.md`, we need to create these files in the `docs/` directory.
+
+1. **Create `index.md`**:
+   Navigate to the `docs/` directory and create the `index.md` file. This will serve as the homepage of your documentation.
+
+```bash title=&quot;bash&quot;
+   cd docs
    echo &quot;# Welcome to SimplyMap Documentation&quot; &gt; index.md
 </code></pre>
 <ol>
 <li><strong>Create <code>api.md</code></strong>:
    Similarly, create the <code>api.md</code> file to document the API reference.</li>
 </ol>
-<pre><code class="language-bash">   echo &quot;# API Reference&quot; &gt; api.md
+<p>```bash title="bash"
+   echo "# API Reference" &gt; api.md</p>
+<pre><code>
+After creating these files, your `docs/` directory should look like this:
+
 </code></pre>
-<p>After creating these files, your <code>docs/</code> directory should look like this:</p>
-<pre><code>~/Desktop/MkDocs_Sandbox/simplymap-docs/docs/
+<p>~/Desktop/MkDocs_Sandbox/simplymap-docs/docs/
 ├── index.md
 ├── usage.md
-├── api.md
-</code></pre>
-<p>Now, you can proceed to edit these files to include the content you want for your documentation.</p>
-<h2 id="step-4-build-your-mkdocs-site">Step 4 - Build Your MkDocs Site:</h2>
-<p>Build your MkDocs site while the virtual environment is still active:</p>
-<pre><code class="language-bash">mkdocs build
+├── api.md</p>
+<pre><code>
+Now, you can proceed to edit these files to include the content you want for your documentation.
+
+
+## Step 4 - Build Your MkDocs Site:
+
+Build your MkDocs site while the virtual environment is still active:
+```bash title=&quot;bash&quot;
+mkdocs build
 </code></pre>
 <p>This will create the <code>site</code> directory within your <code>simplymap-docs</code> project.</p>
 <h2 id="step-5-configure-github-pages-deployment-within-the-virtual-environment">Step 5 - Configure GitHub Pages Deployment within the Virtual Environment:</h2>
-<p>Install the gh-deploy plugin within the active virtual environment:</p>
-<pre><code class="language-bash">pip install mkdocs-material-extensions  # If you are using Material for MkDocs
+<p>Install the gh-deploy plugin within the active virtual environment:
+```bash title="bash"
+pip install mkdocs-material-extensions  # If you are using Material for MkDocs
 pip install mkdocs-git-revision-date-plugin # Optional
-pip install mkdocs-deploy-gh-pages
-</code></pre>
-<h2 id="step-6-initialize-git-for-deployment">Step 6 - Initialize Git for Deployment</h2>
-<p>Before deploying to GitHub Pages, you need to initialize Git in your <code>simplymap-docs</code> project directory and link it to your GitHub repository. Follow these steps:</p>
-<ol>
-<li><strong>Initialize Git</strong>:
-   Navigate to the root of your <code>simplymap-docs</code> project and initialize a Git repository.</li>
-</ol>
-<pre><code class="language-bash">   cd ~/Desktop/MkDocs_Sandbox/simplymap-docs
+pip install mkdocs-deploy-gh-pages</p>
+<pre><code>
+## Step 6 - Initialize Git for Deployment
+
+Before deploying to GitHub Pages, you need to initialize Git in your `simplymap-docs` project directory and link it to your GitHub repository. Follow these steps:
+
+1. **Initialize Git**:
+   Navigate to the root of your `simplymap-docs` project and initialize a Git repository.
+
+```bash title=&quot;bash&quot;
+   cd ~/Desktop/MkDocs_Sandbox/simplymap-docs
    git init
 </code></pre>
 <ol>
 <li><strong>Add Files to the Repository</strong>:
    Add all the files in your project to the Git repository.</li>
 </ol>
-<pre><code class="language-bash">   git add .
-</code></pre>
-<ol>
-<li><strong>Commit the Changes</strong>:
-   Commit the added files with an appropriate commit message.</li>
-</ol>
-<pre><code class="language-bash">   git commit -m &quot;Initial commit for MkDocs project&quot;
+<p>```bash title="bash"
+   git add .</p>
+<pre><code>
+3. **Commit the Changes**:
+   Commit the added files with an appropriate commit message.
+
+```bash title=&quot;bash&quot;
+   git commit -m &quot;Initial commit for MkDocs project&quot;
 </code></pre>
 <ol>
 <li><strong>Link to a GitHub Repository</strong>:
    Add the remote URL of your GitHub repository. Here assuming that SSH URL of our git repository is : git@github.com:amritanshusingh/SimplyMap.git</li>
 </ol>
-<pre><code class="language-bash">   git remote add origin git@github.com:amritanshusingh/SimplyMap.git
-</code></pre>
-<ol>
-<li><strong>Push the Changes</strong>:
-   Push the changes to the <code>main</code> branch of your GitHub repository. If your default branch is <code>master</code>, you can rename it to <code>main</code> using the following commands:</li>
-</ol>
-<pre><code class="language-bash">   # Rename the default branch to main
+<p>```bash title="bash"
+   git remote add origin git@github.com:amritanshusingh/SimplyMap.git</p>
+<pre><code>
+5. **Push the Changes**:
+   Push the changes to the `main` branch of your GitHub repository. If your default branch is `master`, you can rename it to `main` using the following commands:
+
+```bash title=&quot;bash&quot;
+   # Rename the default branch to main
    git branch -M main
 
    # Push the changes to the remote repository
@@ -673,14 +611,14 @@ pip install mkdocs-deploy-gh-pages
 <li><strong>Generate an SSH Key Pair</strong>:
    Run the following command to generate a new SSH key pair. Replace <code>your_email@example.com</code> with the email address associated with your GitHub account.</li>
 </ol>
-<p><code>bash
+<p><code>bash title="bash"
    ssh-keygen -t ed25519 -C "your_email@example.com"</code></p>
 <p>When prompted, press <code>Enter</code> to save the key in the default location (<code>~/.ssh/id_ed25519</code>) and optionally set a passphrase for added security.</p>
 <ol>
 <li><strong>Add the Public Key to GitHub</strong>:
    Copy the contents of your public key to your clipboard:</li>
 </ol>
-<p><code>bash
+<p><code>bash title="bash"
    cat ~/.ssh/id_ed25519.pub</code></p>
 <ul>
 <li>Log in to your GitHub account.</li>
@@ -693,54 +631,58 @@ pip install mkdocs-deploy-gh-pages
    Start the SSH agent to manage your private key:</p>
 </li>
 </ul>
-<p><code>bash
+<p><code>bash title="bash"
    eval "$(ssh-agent -s)"</code></p>
 <ol>
 <li><strong>Add the Private Key to the SSH Agent</strong>:
    Add your private key to the SSH agent:</li>
 </ol>
-<p><code>bash
+<p><code>bash title="bash"
    ssh-add ~/.ssh/id_ed25519</code></p>
 <ol>
 <li><strong>Test the SSH Connection</strong>:
    Verify that your SSH key is correctly configured by testing the connection to GitHub:</li>
 </ol>
-<p><code>bash
+<p><code>bash title="bash"
    ssh -T git@github.com</code></p>
 <p>If successful, you will see a message like: <code>Hi &lt;username&gt;! You've successfully authenticated, but GitHub does not provide shell access.</code></p>
 <ol>
 <li><strong>Retry the Git Push Command</strong>:
    Now that your SSH key is configured, retry the <code>git push</code> command:</li>
 </ol>
-<p><code>bash
+<p><code>bash title="bash"
    git push -u origin main</code></p>
 <p>This should successfully push your changes to the <code>main</code> branch of your GitHub repository.</p>
 <p>Now your project is ready for deployment to GitHub Pages.</p>
 <h2 id="step-7-deploy-to-github-pages-within-the-virtual-environment">Step 7 -  Deploy to GitHub Pages within the Virtual Environment:</h2>
-<p>Run the deployment command while your virtual environment is active:</p>
-<pre><code class="language-bash">mkdocs gh-deploy
-</code></pre>
-<p>This will build your site (if necessary), create or update the gh-pages branch, and push it to your GitHub repository.</p>
-<h2 id="step-8-enable-github-pages-for-your-repository">Step 8 -  Enable GitHub Pages for Your Repository:</h2>
-<ol>
-<li>Go to your repository: https://github.com/amritanshusingh/SimplyMap  </li>
-<li>Click on Settings.  </li>
-<li>Go to the Pages section.  </li>
-<li>Set the "Source" to Deploy from a branch.  </li>
-<li>Select the gh-pages branch.  </li>
-<li>Ensure the "Folder" is set to /(root).  </li>
-<li>Click Save.</li>
-</ol>
-<p>Your documentation site will be available at https://amritanshusingh.github.io/SimplyMap/ after a short while.</p>
-<h2 id="step-9-deactivating-the-virtual-environment-when-done">Step 9 - Deactivating the Virtual Environment (When Done):</h2>
-<p>When you are finished working on your documentation for the time being, you can deactivate the virtual environment:</p>
-<pre><code class="language-bash">deactivate
+<p>Run the deployment command while your virtual environment is active:
+```bash title="bash"
+mkdocs gh-deploy</p>
+<pre><code>This will build your site (if necessary), create or update the gh-pages branch, and push it to your GitHub repository.
+
+## Step 8 -  Enable GitHub Pages for Your Repository:
+
+1. Go to your repository: https://github.com/amritanshusingh/SimplyMap  
+2. Click on Settings.  
+3. Go to the Pages section.  
+4. Set the &quot;Source&quot; to Deploy from a branch.  
+5. Select the gh-pages branch.  
+6. Ensure the &quot;Folder&quot; is set to /(root).  
+7. Click Save.
+
+Your documentation site will be available at https://amritanshusingh.github.io/SimplyMap/ after a short while.
+
+## Step 9 - Deactivating the Virtual Environment (When Done):
+
+When you are finished working on your documentation for the time being, you can deactivate the virtual environment:
+```bash title=&quot;bash&quot;
+deactivate
 </code></pre>
 <p>Your terminal prompt will return to its normal state.</p>
 <p>Everytime you make any changes to documentation pages (like index.md or usage.md etc) you'll have to stage your changes, commit and push to origin <code>main</code> branch. This push needs to be followed by </p>
-<pre><code class="language-bash">mkdocs gh-deploy
-</code></pre>
-<p>command to automatically re-build GitHub page SimplyMap Documentation static site and incorporate the changes from main branch to gh-pages branch which by the way acts as the source branch for our GitHub Pages SimplyMap Documentation site.</p>
+<p><code>bash title="bash"
+mkdocs gh-deploy</code>
+command to automatically re-build GitHub page SimplyMap Documentation static site and incorporate the changes from main branch to gh-pages branch which by the way acts as the source branch for our GitHub Pages SimplyMap Documentation site.</p>
 
 
 
