@@ -59,6 +59,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#setting-up-amazon-aws-ec2-t2micro-instance" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -260,6 +265,19 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Server Setup
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -271,6 +289,41 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-amazon-aws-ec2-t2micro-instance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting up Amazon AWS EC2 t2.micro instance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-required-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing required tools
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -294,6 +347,32 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-amazon-aws-ec2-t2micro-instance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting up Amazon AWS EC2 t2.micro instance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-required-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing required tools
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -310,7 +389,18 @@
 
   <h1>Server Setup</h1>
 
-
+<h2 id="setting-up-amazon-aws-ec2-t2micro-instance">Setting up Amazon AWS EC2 t2.micro instance</h2>
+<p>It is pretty straight forward. 
+1. Sign-up for Amazon AWS Free tier. 
+2. Log into Amazon AWS Console and go to EC2 Instances.
+3. Create a fresh t2.micro instance. It is CLI based server.
+4. Launch t2.micro instance. You'll be able to see its public ipv4 address.
+5. There is an option to generate an ssh key. It comes with a .pem extension. Download it and keep it safe
+6. Now that we have our server setup we can ssh into it. In our terminal we go :
+<div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>ssh<span class="w"> </span>-i<span class="w"> </span>t2microKey.pem<span class="w"> </span>ubuntu@XX.XX.XX.XXX
+</span></code></pre></div></td></tr></table></div>
+XX.XX.XX.XXX is our t2 micro server's public ipv4. ubuntu is our username for the server.</p>
+<h2 id="installing-required-tools">Installing required tools</h2>
 
 
 
