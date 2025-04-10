@@ -1,6 +1,7 @@
 ## Setting up Amazon AWS EC2 t2.micro instance
 
-It is pretty straightforward.  
+It is pretty straight forward.  
+
 1. Sign up for Amazon AWS Free Tier.  
 2. Log into the Amazon AWS Console and go to EC2 Instances.  
 3. Create a fresh t2.micro instance. It is a CLI-based server.  
@@ -9,10 +10,10 @@ It is pretty straightforward.
 6. Now that we have our server set up, we can SSH into it. In our terminal, we run:
 
    ```bash
-   ssh -i t2microKey.pem ubuntu@XX.XX.XX.XXX
+   ssh -i "t2microKey.pem" ubuntu@ec2-44-243-118-166.us-west-2.compute.amazonaws.com
    ```
 
-   Replace `t2microKey.pem` with the path to your downloaded key file and `XX.XX.XX.XXX` with your server's public IPv4 address. `ubuntu` is the default username for the server.
+   Replace `t2microKey.pem` with the path to your downloaded key file and `ec2-44-243-118-166.us-west-2.compute.amazonaws.com` is the server's public IPv4 domain name. `ubuntu` is the default username for the server.
 
 ### Security Note
 Ensure that your `.pem` file has the correct permissions. You can set the appropriate permissions using the following command:
