@@ -8,7 +8,7 @@ For the purpose of this setup guide we will assume our operating system to be Ub
 
 Install Python and Pip (if not already installed):
 
-``` bash title="bash"
+```bash title="bash"
 sudo apt update
 sudo apt install python3 python3-pip
 ```
@@ -16,7 +16,7 @@ sudo apt install python3 python3-pip
 In case of a fresh installation of ubuntu, you won't be having `git` installed
 To Install Git Simply follow :
 
-``` bash title="bash"
+```bash title="bash"
 sudo apt install git
 ```
 
@@ -24,7 +24,7 @@ sudo apt install git
 
 We can simply begin with creating a directory to start working 
 
-``` bash title="bash"
+```bash title="bash"
 mkdir ~/Desktop/MkDocs_Sandbox
 cd ~/Desktop/MkDocs_Sandbox
 ```
