@@ -8,6 +8,7 @@ SimplyMap uses Amazon AWS t2.micro instance (currently free tier) as its API bac
 To read steps to set up the same head [here](server.md)
 
 ## Setting up the Front End
+To read steps to set up the frontend, head [here](frontend.md)
 
 ## Setting up the Documentation 
 
