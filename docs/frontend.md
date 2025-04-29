@@ -9,37 +9,38 @@ This section will guide you through the steps required to set up the frontend fo
 
 ### Steps
 
-1. Login to your Amazon AWS EC2 CloudSSH Console.
+1. Build your application locally. In your application's root directory , run
    ```bash
-    # Download and install nvm:
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
-    # in lieu of restarting the shell
-    \. "$HOME/.nvm/nvm.sh"
-    # Download and install Node.js:
-    nvm install 22
-    # Verify the Node.js version:
-    node -v # Should print "v22.15.0".
-    nvm current # Should print "v22.15.0".
-    # Verify npm version:
-    npm -v # Should print "10.9.2".
+   npm run build
+   ```
+   You will notice a new directory called `dist`
+
+2. Copy this directory to your `~` directory on your EC2 instance. You can use FileZilla
+
+3. Login to your Amazon AWS EC2 CloudSSH Console.
+   ```bash
+    # Download and install nginx
+    sudo apt install nginx -y
    ```
 
-2. Now we have node and npm installed. The steps and versions may vary with time. Visit official nodejs wbesite for the latest steps.
-    Now we will clone our React app into our t2.micro server. Run:
+4. Move the dist folder contents to Nginx’s web directory:
    ```bash
-   git clone https://github.com/amritanshusingh/SimplyMapReact.git
+   sudo mv /home/ubuntu/dist/* /var/www/html/
    ```
-   You will be able to see a new folder SimplyMapReact in your user directory on your server
-
-3. Install dependencies:
+5. Set Permissions
    ```bash
-   cd ~/SimplyMapReact
-   npm install
+   sudo chmod -R 755 /var/www/html/
+   sudo chown -R www-data:www-data /var/www/html/
    ```
 
-4. Start the development server:
+   Start and enable Nginx
    ```bash
-   npm start
+   sudo systemctl start nginx && sudo systemctl enable nginx
    ```
 
-Your frontend application should now be running locally.
+   Verify Nginx is running
+   ```bash
+   sudo systemctl status nginx
+   ```
+
+Your frontend application should now be running.
