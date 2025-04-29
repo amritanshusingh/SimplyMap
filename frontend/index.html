@@ -9,10 +9,8 @@
       
       
       
-        <link rel="prev" href="../usage/">
+        <link rel="prev" href="../server/">
       
-      
-        <link rel="next" href="../server/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +18,7 @@
     
     
       
-        <title>API Reference - SimplyMap Documentation</title>
+        <title>Frontend - SimplyMap Documentation</title>
       
     
     
@@ -61,6 +59,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#setting-up-the-frontend" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -93,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              API Reference
+              Frontend
             
           </span>
         </div>
@@ -230,17 +233,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
         
   
   
@@ -251,7 +247,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -282,10 +277,30 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../frontend/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Frontend
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -296,6 +311,57 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-the-frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting up the Frontend
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting up the Frontend">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Steps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -318,6 +384,47 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-the-frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting up the Frontend
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting up the Frontend">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prerequisites
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Steps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -332,9 +439,63 @@
 
 
 
-  <h1>API Reference</h1>
+  <h1>Frontend</h1>
 
-
+<h2 id="setting-up-the-frontend">Setting up the Frontend</h2>
+<p>This section will guide you through the steps required to set up the frontend for SimplyMap.</p>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+<li>A modern web browser</li>
+<li>Basic knowledge of HTML, CSS, and JavaScript</li>
+</ul>
+<h3 id="steps">Steps</h3>
+<ol>
+<li>
+<p>Login to your Amazon AWS EC2 CloudSSH Console.
+   <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="w"> </span><span class="c1"># Download and install nvm:</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w"> </span>curl<span class="w"> </span>-o-<span class="w"> </span>https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w"> </span><span class="c1"># in lieu of restarting the shell</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w"> </span><span class="se">\.</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.nvm/nvm.sh&quot;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w"> </span><span class="c1"># Download and install Node.js:</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w"> </span>nvm<span class="w"> </span>install<span class="w"> </span><span class="m">22</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w"> </span><span class="c1"># Verify the Node.js version:</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w"> </span>node<span class="w"> </span>-v<span class="w"> </span><span class="c1"># Should print &quot;v22.15.0&quot;.</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w"> </span>nvm<span class="w"> </span>current<span class="w"> </span><span class="c1"># Should print &quot;v22.15.0&quot;.</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w"> </span><span class="c1"># Verify npm version:</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w"> </span>npm<span class="w"> </span>-v<span class="w"> </span><span class="c1"># Should print &quot;10.9.2&quot;.</span>
+</span></code></pre></div></td></tr></table></div></p>
+</li>
+<li>
+<p>Now we have node and npm installed. The steps and versions may vary with time. Visit official nodejs wbesite for the latest steps.
+    Now we will clone our React app into our t2.micro server. Run:
+   <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/amritanshusingh/SimplyMapReact.git
+</span></code></pre></div></td></tr></table></div>
+   You will be able to see a new folder SimplyMapReact in your user directory on your server</p>
+</li>
+<li>
+<p>Install dependencies:
+   <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nb">cd</span><span class="w"> </span>~/SimplyMapReact
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a>npm<span class="w"> </span>install
+</span></code></pre></div></td></tr></table></div></p>
+</li>
+<li>
+<p>Start the development server:
+   <div class="language-bash highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a>npm<span class="w"> </span>start
+</span></code></pre></div></td></tr></table></div></p>
+</li>
+</ol>
+<p>Your frontend application should now be running locally.</p>
 
 
 
